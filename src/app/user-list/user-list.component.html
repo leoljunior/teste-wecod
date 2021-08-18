@@ -1,0 +1,18 @@
+<div class="container">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <td>{{ user.name.first }}</td>
+            <td>{{ user.name.last }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>            
+        </tr>
+    </tbody>
+</div>
