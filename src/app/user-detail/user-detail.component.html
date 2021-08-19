@@ -1,12 +1,15 @@
-<p>Detalhes do Usuário</p>
 <div>
-<ul>
-    <img [attr.src]="user.picture.thumbnail">
-    <li>Nome: {{ user.name.first }}</li>
-    <li>Sobrenome: {{ user.name.last }}</li>
-    <li>Email: {{ user.email }}</li>
-    <li>Celular: {{ user.phone }}</li>
-</ul>
+    <h3>Detalhes do Usuário</h3>
+    <div class="card">
+        <ul>
+            <img [attr.src]="user.picture.large">
+            <li>Nome: {{ user.name.first }}</li>
+            <li>Sobrenome: {{ user.name.last }}</li>
+            <li>Email: {{ user.email }}</li>
+            <li>Celular: {{ user.phone }}</li>
+        </ul>
+    </div>
+    <div >
+        <input class="btn" type="button" [routerLink]="['/user-list']" value="Voltar">
+    </div>
 </div>
-
-<a [routerLink]="['/user-list']">Voltar</a>

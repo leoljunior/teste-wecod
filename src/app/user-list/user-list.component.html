@@ -1,22 +1,23 @@
 <div class="container">
-    <input type="button" value="lista" (click)="getUsers()">
-    <thead *ngIf="userList.length > 0">
-        <tr>
-            <th>Nome</th>
-            <th>Sobrenome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of userList">
-            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.first }}</a></td>
-            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.last }}</a></td>
-            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.email }}</a></td>
-            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.phone }}</a></td>
-        </tr>
-    </tbody>
+    <input class="btn" type="button" value="Buscar Lista na API" (click)="getUsers()">
+    <table>
+        <thead *ngIf="userList.length > 0">
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+                <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.first }}</a></td>
+                <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.last }}</a></td>
+                <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.email }}</a></td>
+                <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.phone }}</a></td>
+            </tr>
+        </tbody>
+    </table>
     <div>
-        <!-- <app-user-detail [user]="userList"></app-user-detail> -->
     </div>
 </div>

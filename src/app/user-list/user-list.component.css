@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+table {
+    margin: 25px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: azure;
+    box-shadow: 2px 3px 5px 0 rgba(14, 13, 13, 0.9);
+}
+
+.container a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    padding: 0px 20px;
+}
+
+.container th {
+    background-color: rgb(80, 78, 78);
+    font-size: 1.3rem;
+    color: white;
+    padding: 5px 20px;
+}
+
+thead th:nth-child(1), th:nth-child(2), th:nth-child(3) {
+    border-right: 2px solid rgb(48, 47, 47);
+    
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 2px 25px;
+    border-radius: 25px;
+    box-shadow: 2px 3px 5px 0 rgba(14, 13, 13, 0.9);
+}
+
+.btn:hover {
+    border: 1px solid;
+}
+
+tbody tr:hover {
+    background-color: rgb(170, 168, 168);
+}
+
+
