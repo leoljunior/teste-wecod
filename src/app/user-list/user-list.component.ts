@@ -8,18 +8,19 @@ import { UserService } from '../user.service';
 })
 export class UserListComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {} 
 
   userList: any[] = []
 
   ngOnInit(): void {
-    this.getUsers()
+    this.userList = this.userService.loadDataOfLocalStorage()
+    
   }
 
   getUsers() {
     this.userService.getUsers().subscribe((data: any) => {
       this.userList = data.results
-      console.log(this.userList)
+      this.userService.test(data.results)
     })
   }
 

@@ -1,1 +1,12 @@
-<p>user-detail works!</p>
+<p>Detalhes do Usuário</p>
+<div>
+<ul>
+    <img [attr.src]="user.picture.thumbnail">
+    <li>Nome: {{ user.name.first }}</li>
+    <li>Sobrenome: {{ user.name.last }}</li>
+    <li>Email: {{ user.email }}</li>
+    <li>Celular: {{ user.phone }}</li>
+</ul>
+</div>
+
+<a [routerLink]="['/user-list']">Voltar</a>

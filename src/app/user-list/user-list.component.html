@@ -1,5 +1,6 @@
 <div class="container">
-    <thead>
+    <input type="button" value="lista" (click)="getUsers()">
+    <thead *ngIf="userList.length > 0">
         <tr>
             <th>Nome</th>
             <th>Sobrenome</th>
@@ -12,7 +13,10 @@
             <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.first }}</a></td>
             <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.last }}</a></td>
             <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.email }}</a></td>
-            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.phone }}</a></td>          
+            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.phone }}</a></td>
         </tr>
     </tbody>
+    <div>
+        <!-- <app-user-detail [user]="userList"></app-user-detail> -->
+    </div>
 </div>
