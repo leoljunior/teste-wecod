@@ -9,10 +9,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let user of userList">
-            <td>{{ user.name.first }}</td>
-            <td>{{ user.name.last }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.phone }}</td>            
+            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.first }}</a></td>
+            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.name.last }}</a></td>
+            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.email }}</a></td>
+            <td><a [routerLink]="['/user-detail', user.login.uuid]">{{ user.phone }}</a></td>          
         </tr>
     </tbody>
 </div>
