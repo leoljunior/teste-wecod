@@ -13,14 +13,13 @@ export class UserListComponent implements OnInit {
   userList: any[] = []
 
   ngOnInit(): void {
-    this.userList = this.userService.loadDataOfLocalStorage()
-    
+    this.userList = this.userService.loadDataOfLocalStorage()    
   }
 
   getUsers() {
-    this.userService.getUsers().subscribe((data: any) => {
+    this.userService.getUsersFromApi().subscribe((data: any) => {
       this.userList = data.results
-      this.userService.test(data.results)
+      this.userService.updateUsers(data.results)
     })
   }
 

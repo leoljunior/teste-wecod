@@ -2,14 +2,14 @@
     <h3>Detalhes do Usuário</h3>
     <div class="card">
         <ul>
-            <img [attr.src]="user.picture.large">
+            <img [src]="user.picture.large">
             <li>Nome: {{ user.name.first }}</li>
             <li>Sobrenome: {{ user.name.last }}</li>
             <li>Email: {{ user.email }}</li>
             <li>Celular: {{ user.phone }}</li>
         </ul>
     </div>
-    <div >
+    <div>
         <input class="btn" type="button" [routerLink]="['/user-list']" value="Voltar">
     </div>
 </div>

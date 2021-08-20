@@ -5,47 +5,41 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserService{
 
-  
-  lista: any[] = []
-  constructor(private httpClient: HttpClient) { }
+  userList: any[] = []
+  constructor(private httpClient: HttpClient) {
+    this.loadDataOfLocalStorage() 
+  }
 
   url = 'https://randomuser.me/api/?results=20&inc=login,name,email,phone,picture'
 
-  getUsers(): Observable<any[]> {
+  getUsersFromApi(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.url)
   }
 
-  getById(uuid: any) {
-    // console.log('id recebido' + uuid)
-  // console.log('lista' + this.lista)
-    return this.lista.find(user => user.login.uuid === uuid)
+  getUserById(uuid: any) {
+    return this.userList.find(user => user.login.uuid === uuid)
   }
 
-  test(lista: any[]) {
-    this.lista = lista
+  updateUsers(lista: any[]) {
+    this.userList = lista
     this.saveInLocalStorage()
   }
 
-  // getall(){
-  //   this.loadDataOfLocalStorage()
-  //   return this.lista
-  // }
-
   saveInLocalStorage() {
-    const data = JSON.stringify(this.lista)
-    localStorage.setItem('lista', data)
+    const data = JSON.stringify(this.userList)
+    localStorage.setItem('list', data)
   }
 
   loadDataOfLocalStorage() {
-    const dat = localStorage.getItem('lista')
-    if(dat) {
-      this.lista = JSON.parse(dat)
+    const data = localStorage.getItem('list')
+    if(data) {
+      this.userList = JSON.parse(data)
     }else {
-      this.lista
+      this.userList
     }
-    return this.lista
+    return this.userList
   }
 
 }
